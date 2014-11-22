@@ -1,0 +1,24 @@
+{
+  "name": "infoolio",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.3.3", 
+    "bootstrap": "~3.2.0",
+    "modernizr": "~2.8.3"
+  },
+  "version": "0.0.1",
+  "authors": [
+    "marklabenski <mark.labenski@gmail.com>"
+  ],
+  "main": "app/index.html",
+  "moduleType": [
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "test",
+    "tests"
+  ]
+}
