@@ -1,0 +1,156 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen+Mono|Oxygen:400,700,300);
+html,
+body {
+  height: 100%;
+  background-color: #f1f0ed;
+}
+.standard-link {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1d1d1d;
+}
+.standard-link:hover {
+  text-decoration: none;
+}
+.vcenter {
+  /*  display: table-cell;
+  vertical-align: middle;
+  float: none;*/
+}
+.full-height {
+  height: 100%;
+}
+header {
+  position: relative;
+  z-index: 100;
+}
+.nav.horizontal li {
+  float: left;
+}
+.nav.horizontal:after {
+  clear: left;
+}
+.nav a {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1d1d1d;
+}
+.nav a:hover {
+  text-decoration: none;
+}
+section.main {
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+section.main .left-part {
+  position: relative;
+  margin-left: -10px;
+  height: 100%;
+}
+section.main .right-part {
+  margin-top: -20px;
+  background-color: #ffffff;
+  min-height: 600px;
+  height: 100%;
+}
+section.main .content {
+  text-align: center;
+  position: relative;
+}
+section.main .book {
+  top: 50%;
+  left: 50%;
+  position: relative;
+  margin: -302px 0 0 -400px;
+  height: 564px;
+  width: 800px;
+}
+section.main .book .pages {
+  margin: 0 auto;
+  clear: both;
+  display: inline-block;
+}
+section.main .book .pages .page {
+  background-color: #ffffff;
+  float: left;
+  height: 564px;
+  width: 400px;
+}
+footer {
+  width: 100%;
+}
+footer .nav-link-padding {
+  padding: 24px 18px;
+}
+footer .nav-link-hover {
+  background-color: #8e8e8d;
+  color: #cd1719;
+}
+footer.on-bottom {
+  position: absolute;
+  bottom: 0;
+}
+footer a {
+  display: block;
+  padding: 24px 18px;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1d1d1d;
+}
+footer a:hover {
+  background-color: #8e8e8d;
+  color: #cd1719;
+}
+footer a:hover {
+  text-decoration: none;
+}
+footer .progress-bar-container {
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+}
+footer .progress-bar-container .progress-bar {
+  background-color: #cd1719;
+  margin-left: 31px;
+}
+footer .progress-bar-container .progress-bar.initial {
+  width: 0;
+}
+footer .progress-bar-container .progress-bar.step-one {
+  width: 50px;
+}
+footer .progress-bar-container .progress-bar.step-two {
+  width: 166px;
+}
+footer .progress-bar-container .progress-bar.step-three {
+  width: 240px;
+}
+footer .progress-bar-container .progress-bar.step-four {
+  width: 434px;
+}
+footer .progress-bar-container .progress-bar.step-five {
+  width: 506px;
+}
+footer .progress-bar-container .progress-bar.step-six {
+  width: 598px;
+}
+footer .progress-bar-container .progress-bar.step-seven {
+  width: 704px;
+}
+footer .subnavi .right-subnavi {
+  background-color: #ffffff;
+}
+footer .subnavi li > a {
+  padding: 24px 18px;
+}
+footer .subnavi li > a:hover {
+  background-color: #8e8e8d;
+  color: #cd1719;
+}

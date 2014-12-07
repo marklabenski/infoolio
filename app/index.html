@@ -14,14 +14,14 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-      
+         
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
   </head>
-  <body>
+  <body class="full-height">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -57,10 +57,43 @@
             
         </nav>
     </header>
-    <section>
+    
+    <section class="container-fluid main full-height">
+       
+            <div class="content col-md-8 left-part grey-bg">
+                <div class="book center-block vcenter" >
+                    <div class="pages">
+                        <div class="page"></div>
+                        <div class="page"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="settings col-md-4 right-part"></div>
         
     </section>
-    <footer>
+    
+    <footer class="container-fluid on-bottom">
+        
+            <div class="row progress-bar-container">
+                <div class="progress-bar step-one"></div>
+            </div>
+            <div class="subnavi row">
+                <div class="col-md-8 left-subnavi">
+                    <ul class="nav horizontal">
+                        <li class="active"><a href="#" data-nav="start">Start</a></li>    
+                        <li><a href="#" data-nav="cover">Umschlag</a></li>    
+                        <li><a href="#" data-nav="title">Titel</a></li>    
+                        <li><a href="#" data-nav="index">Inhaltsverzeichnis</a></li>    
+                        <li><a href="#" data-nav="content">Text</a></li>    
+                        <li><a href="#" data-nav="layout">Layout</a></li>    
+                        <li><a href="#" data-nav="print">Drucken</a></li>    
+                    </ul>
+                </div>
+                <div class="col-md-4 row right-subnavi">
+                    <a href="#" class="play-icon icon-right" data-nav="continue">Weiter</a>
+                </div>
+            </div>
         
     </footer>
     

@@ -1,1 +1,173 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen+Mono|Oxygen:400,700,300);
+//global vars
+@infoolio-red: #cd1719;
+@infoolio-lightgrey: #f1f0ed;
+@infoolio-darkgrey: #8e8e8d;
+@infoolio-purple: #8b4074;
+@infoolio-black: #1d1d1d;
+@infoolio-white: #ffffff;
+
+@standard-font: 'Oxygen', sans-serif;
+
+html, body{
+  height:100%;
+  background-color: @infoolio-lightgrey;
+}
+.standard-link
+{
+  font-family: @standard-font;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: @infoolio-black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.vcenter {
+/*  display: table-cell;
+  vertical-align: middle;
+  float: none;*/
   
+}
+.full-height {
+  height:100%;
+}
+
+//head with navigation and logo
+header {
+  position:relative;
+  z-index:100;
+}
+// all navigations are uppercase
+.nav {
+  
+  // horizontal navigation
+  &.horizontal { 
+    li {
+      float:left;
+    }
+    &:after {
+      clear: left;
+    }
+  }
+  a { 
+    .standard-link;
+  }
+}
+
+// Main content
+section.main {
+  top:0;
+  position:absolute;
+  width:100%;
+  @site-width: 400px;
+  @site-height: @site-width * 1.41;
+  .left-part {
+    position:relative;
+    margin-left:-10px;
+    height:100%;
+  }
+  .right-part {
+    margin-top:-20px;
+    background-color: @infoolio-white;
+    min-height:600px;
+    height:100%;
+  }
+  .content {
+    text-align: center;
+   
+    position:relative;
+  }
+  .book {
+    top: 50%;
+    left: 50%;
+    position:relative;
+    margin: (@site-height/-2px)-20 0 0 -@site-width;
+    
+    height:@site-height;
+    width:@site-width*2;
+      
+    .pages {
+      margin: 0 auto;
+      clear:both;
+      display: inline-block;
+      .page {
+        background-color: @infoolio-white;
+        float:left;
+        
+        height:@site-height;
+        width:@site-width;
+      }
+    }
+  }
+}
+
+// Footer bar below content
+footer {
+  @vertical-nav-link-padding: 36px;
+  @horizontal-nav-link-padding: 48px;
+  .nav-link-padding {
+    padding: @horizontal-nav-link-padding/2 @vertical-nav-link-padding/2;
+  }
+  .nav-link-hover {
+    background-color: @infoolio-darkgrey;
+    color: @infoolio-red;
+  }
+  width: 100%;
+  &.on-bottom {  
+    position:absolute;
+    bottom:0;
+  }
+  a {
+    display:block;
+    &:hover {
+      .nav-link-hover
+    }
+    .nav-link-padding;
+    .standard-link;
+  }
+  // progress bar changing over classes
+  // distance between links
+  
+  .progress-bar-container {
+    height:2px;
+    width:100%;
+    background-color: @infoolio-white;
+    .progress-bar {
+      background-color: @infoolio-red;
+      margin-left: 31px;
+      
+      @step-one-width:    50px;
+      @step-two-width:    68px + @horizontal-nav-link-padding + @step-one-width;
+      @step-three-width:  26px + @horizontal-nav-link-padding + @step-two-width;
+      @step-four-width:   146px+ @horizontal-nav-link-padding + @step-three-width;
+      @step-five-width:   24px + @horizontal-nav-link-padding + @step-four-width;
+      @step-six-width:    44px + @horizontal-nav-link-padding + @step-five-width;
+      @step-seven-width:  58px + @horizontal-nav-link-padding + @step-six-width;
+      &.initial {  width:0; }
+      &.step-one {    width: @step-one-width; }
+      &.step-two {    width: @step-two-width; }
+      &.step-three {  width: @step-three-width; }
+      &.step-four {   width: @step-four-width; }
+      &.step-five {   width: @step-five-width; }
+      &.step-six {    width: @step-six-width; } 
+      &.step-seven {  width: @step-seven-width; }
+    }
+  }
+  
+  // container for the navigation and the "continue"-button on the right
+  .subnavi {
+    .right-subnavi {
+      background-color: @infoolio-white;
+    }
+    
+    li > a {
+      &:hover {
+        .nav-link-hover;
+      }
+      .nav-link-padding; 
+    } 
+  }
+}
