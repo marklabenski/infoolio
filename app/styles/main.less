@@ -25,6 +25,13 @@ html, body{
   }
 }
 
+.page_font() 
+{
+  font-family: @standard-font;
+  font-weight: 400;
+  font-size:11px;
+}
+
 .vcenter {
 /*  display: table-cell;
   vertical-align: middle;
@@ -70,10 +77,33 @@ section.main {
     height:100%;
   }
   .right-part {
-    margin-top:-20px;
+    margin-top:-12px;
     background-color: @infoolio-white;
     min-height:600px;
     height:100%;
+    .top {
+      width:100%;
+      margin-top: 80px;
+      div {
+        width:100%;
+      }
+      .inputs {
+        .part {
+          padding:10px;
+        }
+        padding:24px;
+        width:100%;
+      }
+    }
+    .bottom {
+      bottom:68px;
+      position:absolute;
+      .status-text, .preview{
+        height:20px;
+        padding:24px;
+      }
+      
+    }
   }
   .content {
     text-align: center;
@@ -94,11 +124,19 @@ section.main {
       clear:both;
       display: inline-block;
       .page {
+        &:nth-child(2) {
+          border-left:1px solid @infoolio-darkgrey;
+        }
         background-color: @infoolio-white;
         float:left;
         
         height:@site-height;
         width:@site-width;
+        p {
+          .page_font();
+          text-align:left;
+          margin:24px;
+        }
       }
     }
   }

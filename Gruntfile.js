@@ -36,7 +36,7 @@ module.exports = function (grunt) {
       },
         coffee: {
             files: ['app/**/*.coffee'],
-            tasks: ['coffee', 'jshint']
+            tasks: ['coffee:compile', 'jshint']
         },
         less: {
             files: ['app/**/*.less'],
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
         },
       js: {
         files: ['<%= config.app %>/scripts/{,*/}*.js'],
-        tasks: ['jshint' ],
+        tasks: [/*'jshint' */],
         options: {
           livereload: true
         }
@@ -139,7 +139,7 @@ module.exports = function (grunt) {
         'Gruntfile.js',
         '<%= config.app %>/scripts/{,*/}*.js',
         '!<%= config.app %>/scripts/vendor/*',
-        'test/spec/{,*/}*.js'
+        //'test/spec/{,*/}*.js'
       ]
     },
 
@@ -171,7 +171,7 @@ module.exports = function (grunt) {
       less: {
           css: {
               options: {
-                  paths: ["app/styles"]
+                  paths: ['app/styles']
               },
               files: [
                   {
@@ -187,8 +187,26 @@ module.exports = function (grunt) {
 
       // compile coffeescript files in `/src/coffee/` into JS files
       coffee: {
+          /*jshint camelcase: false */
+          compile: {
+              options: {
+                  join: true
+              },
+              files: {
+                  'app/scripts/main.js': [
+                      'app/scripts/infoolio/stage.coffee',
+                      'app/scripts/infoolio/startStage.coffee',
+                      'app/scripts/infoolio/page.coffee',
+                      'app/scripts/infoolio/book.coffee',
+                      'app/scripts/main.coffee'
+                      
+                  ] // 1:1 compile
+              }
+          },
+          
           glob_to_multiple: {
               expand: true,
+              
               // flatten: true,
               cwd: 'app/scripts',
               src: ['**/*.coffee'],
