@@ -6,8 +6,8 @@
 ###
 
 class Book
-  title : "Buchtitel"
-  purpose : ""
+  title : ''
+  purpose : ''
   constructor: ()->
     firstPage = new Page()
     @pages = [1:firstPage]

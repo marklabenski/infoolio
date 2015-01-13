@@ -187,3 +187,20 @@ footer .subnavi li > a:hover {
   background-color: #8e8e8d;
   color: #cd1719;
 }
+footer .subnavi li.active a {
+  color: #cd1719;
+}
+nav.navbar {
+  background-color: #ffffff;
+}
+nav.navbar > .container-fluid .navbar-brand {
+  width: 80px;
+  margin-top: -20px;
+  margin-left: -24px;
+}
+nav.navbar > .container-fluid .navbar-brand img {
+  margin-left: -20px;
+}
+nav.navbar ul.navbar-nav {
+  margin-left: 0px;
+}

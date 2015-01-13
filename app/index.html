@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="infoolio">
   <head>
     <meta charset="utf-8">
     <title>infoolio</title>
@@ -21,7 +21,7 @@
     <!-- endbuild -->
 
   </head>
-  <body class="full-height" ng-app="infoolio">
+  <body class="full-height"  ng-controller="bookController">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -57,8 +57,8 @@
             
         </nav>
     </header>
-   
-    <section class="container-fluid main full-height" ng-controller="bookController">
+    
+    <section class="container-fluid main full-height" >
        
             <div class="content col-md-8 left-part grey-bg">
                 <div class="book center-block vcenter" >
@@ -78,11 +78,12 @@
             <div class="settings col-md-4 right-part">
                 <div class="top row">
                     <div class="inputs col-lg-12">
-                        <div ng-show="stages[0].isActive">
+                        <div ng-show="stages[0].isActive" ng-controller="startStageController">
+                            
                             <div class="part">
                                 GIB HIER DEINEM BUCH EINEN ARBEITSTITEL:<br />
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="bookTitle" ng-model="book.title" required>
+                                    <input type="text" class="form-control" name="bookTitle" ng-model="book.title" placeholder="Buchtitel" required>
                                 </div>
                             </div>
                             <div class="part">
@@ -101,7 +102,46 @@
                                 </div>
                             </div>
                             <div class="part">
-                                Purpose: {{ book.purpose }}
+                                Purpose: {{ book.purpose }}<br />
+                                
+                                 
+                            </div>
+                        </div>
+                        <div ng-show="stages[1].isActive">
+                            <div class="part">
+                                SUCH DIR EINEN UMSCHLAG AUS<br />
+                            </div>
+                            <div class="part">
+                                KATEGORIE<br />
+                                <div class="input-group">
+
+                                    <select class="form-control" name="envelopeCategory" ng-model="envelope.category" required>
+
+                                        <option>EINFARBIG</option>
+                                        <option>MUSTER</option>
+                                        <option>GEOMETRISCH</option>
+                                        <option>FLORA</option>
+                                        <option>TIER</option>
+                                        <option>MOTTO</option>
+                                        <option>VERLAUF</option>
+                                        <option>MIT BILDERN</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="part">
+                                DEINE AUSWAHL
+                                <div class="envelope-select">
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                        <div ng-show="stages[2].isActive">
+                            <div class="part">
+                                BUCHTITEL<br />
+                            
+
                             </div>
                         </div>
                     </div>
@@ -113,7 +153,7 @@
                         NOCH {{ stagesLeft }} SCHRITTE BIS ZU DEINEM INFOOLIO
                         
                     </div>
-                
+                        
                     <div class="preview">
                         <a href="#">Vollbildvorschau</a>
                     </div>
@@ -125,22 +165,22 @@
     <footer class="container-fluid on-bottom">
         
             <div class="row progress-bar-container">
-                <div class="progress-bar step-one"></div>
+                <div class="progress-bar {{ stepClass }}"></div>
             </div>
             <div class="subnavi row">
                 <div class="col-md-8 left-subnavi">
                     <ul class="nav horizontal">
-                        <li class="active"><a href="#" data-nav="start">Start</a></li>    
-                        <li><a href="#" data-nav="cover">Umschlag</a></li>    
-                        <li><a href="#" data-nav="title">Titel</a></li>    
-                        <li><a href="#" data-nav="index">Inhaltsverzeichnis</a></li>    
-                        <li><a href="#" data-nav="content">Text</a></li>    
-                        <li><a href="#" data-nav="layout">Layout</a></li>    
-                        <li><a href="#" data-nav="print">Drucken</a></li>    
+                        <li ng-class="{ active: stages[0].isActive }"><a ng-click="activateStage(0)" href="#" data-nav="start">Start</a></li>    
+                        <li ng-class="{ active: stages[1].isActive }"><a ng-click="activateStage(1)" href="#" data-nav="cover">Umschlag</a></li>    
+                        <li ng-class="{ active: stages[2].isActive }"><a ng-click="activateStage(2)" href="#" data-nav="title">Titel</a></li>    
+                        <li ng-class="{ active: stages[3].isActive }"><a ng-click="activateStage(3)" href="#" data-nav="index">Inhaltsverzeichnis</a></li>    
+                        <li ng-class="{ active: stages[4].isActive }"><a ng-click="activateStage(4)" href="#" data-nav="content">Text</a></li>    
+                        <li ng-class="{ active: stages[5].isActive }"><a ng-click="activateStage(5)" href="#" data-nav="layout">Layout</a></li>    
+                        <li ng-class="{ active: stages[6].isActive }"><a ng-click="activateStage(6)" href="#" data-nav="print">Drucken</a></li>    
                     </ul>
                 </div>
                 <div class="col-md-4 row right-subnavi">
-                    <a href="#" class="play-icon icon-right" data-nav="continue">Weiter</a>
+                    <a href="#" class="play-icon icon-right" ng-click="continueToNextStage()" data-nav="continue">Weiter</a>
                 </div>
             </div>
         

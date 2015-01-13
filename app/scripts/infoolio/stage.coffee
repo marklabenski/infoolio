@@ -1,5 +1,11 @@
 `'use strict'`
 class Stage
   isActive : false
-  constructor: () ->
-     
+  isCompleted : false
+  checkIfStageComplete: ()->
+    return true
+    
+  activate: ()->
+    @isActive = true
+  
+   

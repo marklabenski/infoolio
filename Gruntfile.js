@@ -194,8 +194,11 @@ module.exports = function (grunt) {
               },
               files: {
                   'app/scripts/main.js': [
+                      'app/scripts/infoolio/init.coffee',
                       'app/scripts/infoolio/stage.coffee',
                       'app/scripts/infoolio/startStage.coffee',
+                      'app/scripts/infoolio/envelopeStage.coffee',
+                      'app/scripts/infoolio/titleStage.coffee',
                       'app/scripts/infoolio/page.coffee',
                       'app/scripts/infoolio/book.coffee',
                       'app/scripts/main.coffee'
