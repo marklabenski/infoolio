@@ -1,2 +1,2 @@
 `'use strict'`
-app = angular.module 'infoolio', []
+app = angular.module 'infoolio', ['ui.bootstrap'] 
