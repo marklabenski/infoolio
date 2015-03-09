@@ -60,89 +60,16 @@
     
     <section class="container-fluid main full-height" >
        
-            <div class="content col-md-8 left-part grey-bg">
-                <div class="book center-block vcenter" >
-                    <div class="pages">
-                        <div class="page">
-                            <h3>{{ book.title }}</h3>
-                            <p>
-                                Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl
-                                Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl 
-                            </p>
-                        </div>
-                        <div class="page"></div>
-                    </div>
-                </div>
+            <div class="content col-md-8 left-part grey-bg" ng-include="bookViewTemplate">
+                
                 
             </div>
             <div class="settings col-md-4 right-part">
                 <div class="top row">
                     <div class="inputs col-lg-12">
-                        <div ng-show="stages[0].isActive" ng-controller="startStageController">
+
+                        <div ng-include="inputTemplate">
                             
-                            <div class="part">
-                                GIB HIER DEINEM BUCH EINEN ARBEITSTITEL:<br />
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="bookTitle" ng-model="book.title" placeholder="Buchtitel" required>
-                                </div>
-                            </div>
-                            <div class="part">
-                                WAS HAST DU VOR?<br />
-                                <div class="input-group">
-                                    
-                                    <select class="form-control" name="bookPurpose" ng-model="book.purpose" required>
-    
-                                        <option>KOCHBUCH</option>
-                                        <option>DEINE BIOGRAFIE</option>
-                                        <option>TEXT OHNE KAPITEL</option>
-                                        <option>MIT BILDERN</option>
-                                        <option>KOCHBUCH</option>
-                                        
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="part">
-                                Purpose: {{ book.purpose }}<br />
-                                
-                                 
-                            </div>
-                        </div>
-                        <div ng-show="stages[1].isActive">
-                            <div class="part">
-                                SUCH DIR EINEN UMSCHLAG AUS<br />
-                            </div>
-                            <div class="part">
-                                KATEGORIE<br />
-                                <div class="input-group">
-
-                                    <select class="form-control" name="envelopeCategory" ng-model="envelope.category" required>
-
-                                        <option>EINFARBIG</option>
-                                        <option>MUSTER</option>
-                                        <option>GEOMETRISCH</option>
-                                        <option>FLORA</option>
-                                        <option>TIER</option>
-                                        <option>MOTTO</option>
-                                        <option>VERLAUF</option>
-                                        <option>MIT BILDERN</option>
-
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="part">
-                                DEINE AUSWAHL
-                                <div class="envelope-select">
-                                    
-                                </div>
-
-                            </div>
-                        </div>
-                        <div ng-show="stages[2].isActive">
-                            <div class="part">
-                                BUCHTITEL<br />
-                            
-
-                            </div>
                         </div>
                     </div>
                 </div>    
@@ -192,6 +119,7 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
