@@ -5,13 +5,42 @@
     @scope.stages = @stages
 ###
 
+class FontElement
+  text : ''
+  family : 'sans-serif'
+  size : 12
+  bold : false
+  italic : false
+  capital : false
+  align : 'left'
+
 class Book
-  title : ''
+  workingTitle : ''
+  title : {font: new FontElement() }
+  subtitle : {font: new FontElement() }
   purpose : ''
+  totalPages : 100
+  emptyPages : 20
   constructor: ()->
     firstPage = new Page()
-    @pages = [1:firstPage]
+    @pages = [firstPage]
+    @totalPages = @getTotalPageCount()
+    
   getTotalPageCount: () ->
-    100
+    return @pages.length
   getEmptyPageCount: () ->
-    20 
+    @emptyPages
+    
+  getOddPages: () ->
+    returnArr = []
+    for page, key in @pages
+      if key % 2 > 0
+        returnArr.push( page )
+    return returnArr
+
+  getEvenPages: () ->
+    returnArr = []
+    for page, key in @pages
+      if key % 2 == 0
+        returnArr.push( page )
+    return returnArr
