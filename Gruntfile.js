@@ -138,7 +138,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= config.app %>/scripts/{,*/}*.js',
-        '!<%= config.app %>/scripts/vendor/*',
+        '!<%= config.app %>/scripts/vendor/*'
         //'test/spec/{,*/}*.js'
       ]
     },
@@ -196,9 +196,12 @@ module.exports = function (grunt) {
                   'app/scripts/main.js': [
                       'app/scripts/infoolio/init.coffee',
                       'app/scripts/infoolio/stage.coffee',
-                      'app/scripts/infoolio/startStage.coffee',
-                      'app/scripts/infoolio/envelopeStage.coffee',
+                      'app/scripts/infoolio/stages/*.coffee',
+                     /* 'app/scripts/infoolio/envelopeStage.coffee',
                       'app/scripts/infoolio/titleStage.coffee',
+                      'app/scripts/infoolio/indexStage.coffee',
+                      'app/scripts/infoolio/Stage.coffee',*/
+                      
                       'app/scripts/infoolio/page.coffee',
                       'app/scripts/infoolio/book.coffee',
                       'app/scripts/main.coffee'
