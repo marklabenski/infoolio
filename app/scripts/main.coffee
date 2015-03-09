@@ -9,17 +9,18 @@ class BookController
   @$inject: ['$scope']
   
   constructor: (@scope) ->
+    @currentStep = 1
     @createBook()   
     @initStages()
     @fillScope()
-    @currentStep = 1
+    
     @stepClasses = ['step-one', 'step-two', 'step-three', 'step-four', 'step-five', 'step-six', 'step-seven']
     @changeStepClass()
     
   
   ###
     Fill the app scope
-    add methods here to let them be present in controller scope  
+    add methods here to let them be present in controller scope   
   ###
   fillScope: () ->
     @scope.greeting = 'demo value'
@@ -29,19 +30,24 @@ class BookController
     @scope.stages = @stages
     @scope.continueToNextStage = @continueToNextStage
     @scope.activateStage = @activateStage
+    @scope.bookViewTemplate = 'partials/bookView.html'
+   
   
   ###
     fill stages Array
   ###
   initStages: () =>
     startStage = new StartStage(@scope)
-    startStage.activate()
     envelopeStage = new EnvelopeStage(@scope)
     titleStage = new TitleStage(@scope)
+    indexStage = new IndexStage(@scope) 
+    contentStage = new ContentStage(@scope)
+    layoutStage = new LayoutStage(@scope)
+    printStage = new PrintStage(@scope)
     
-    @stages = [startStage, envelopeStage, titleStage]
+    @stages = [startStage, envelopeStage, titleStage, indexStage, contentStage, layoutStage, printStage]
     @currentStageNumber = 0
-  
+    @activateStage(0)
     
   ###
     check if all changes made and then go to the next stage in Array
@@ -49,20 +55,21 @@ class BookController
   continueToNextStage: () =>
     @activateStage(@currentStageNumber+1, true)
         
-  activateStage: (newStageNumber, changeStep = false) =>
-    if changeStep or @currentStep-1 >= newStageNumber
-      currentStage = @stages[@currentStageNumber]
+  activateStage: (newStageNumber, addOneToStep = false) =>
+    if addOneToStep or @currentStep-1 >= newStageNumber
+      @currentStage = @stages[@currentStageNumber]
       
-      if(currentStage.checkIfStageComplete())
+      if(@currentStage.checkIfStageComplete())
         if @stages.length-1 >= newStageNumber
-          currentStage.isActive = false
+          @currentStage.isActive = false
           
           @currentStageNumber = newStageNumber
-          if changeStep
+          if addOneToStep
             @currentStep++
             @changeStepClass()
-          currentStage = @stages[@currentStageNumber]
-          currentStage.isActive = true
+          @currentStage = @stages[@currentStageNumber]
+          @scope.inputTemplate = @currentStage.getInputTemplate()
+          @currentStage.isActive = true
   
   changeStepClass: () =>
     @scope.stepClass = @stepClasses[@currentStageNumber]
@@ -70,6 +77,7 @@ class BookController
   createBook: =>
     @book = new Book()
     @scope.book = @book;
+
 
 app.controller 'bookController', BookController
  
