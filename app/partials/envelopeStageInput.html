@@ -1,0 +1,37 @@
+<div ng-controller="envelopeStageController">
+    <div class="part">
+        SUCH DIR EINEN UMSCHLAG AUS<br />
+    </div>
+    <div class="part">
+        KATEGORIE<br />
+        <div class="input-group">
+
+            <select class="form-control" name="envelopeCategory" ng-model="envelope.category" required>
+
+                <option>EINFARBIG</option>
+                <option>MUSTER</option>
+                <option>GEOMETRISCH</option>
+                <option>FLORA</option>
+                <option>TIER</option>
+                <option>MOTTO</option>
+                <option>VERLAUF</option>
+                <option>MIT BILDERN</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="part">
+        DEINE AUSWAHL
+        <div class="envelope-select">
+
+        </div>
+
+    </div>
+</div>
+<div ng-show="stages[2].isActive">
+    <div class="part">
+        BUCHTITEL<br />
+
+
+    </div>
+</div>

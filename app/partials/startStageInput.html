@@ -1,0 +1,30 @@
+<!--ng-show="stages[0].isActive"-->
+<div ng-controller="startStageController">
+
+    <div class="part">
+        GIB HIER DEINEM BUCH EINEN ARBEITSTITEL:<br />
+        <div class="input-group">
+            <input type="text" class="form-control" name="bookTitle" ng-model="book.workingTitle" placeholder="Arbeitstitel" required>
+        </div>
+    </div>
+    <div class="part">
+        WAS HAST DU VOR?<br />
+        <div class="input-group">
+
+            <select class="form-control" name="bookPurpose" ng-model="book.purpose" required>
+
+                <option>KOCHBUCH</option>
+                <option>DEINE BIOGRAFIE</option>
+                <option>TEXT OHNE KAPITEL</option>
+                <option>MIT BILDERN</option>
+                <option>KOCHBUCH</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="part">
+        Purpose: {{ book.purpose }}<br />
+
+
+    </div>
+</div>

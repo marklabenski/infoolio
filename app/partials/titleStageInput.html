@@ -1,0 +1,95 @@
+<div ng-controller="titleStageController">
+
+    <div class="part">
+        TITEL DEINES BUCHES:
+        <input type="text" class="form-control" name="bookTitle" ng-model="book.title.text" placeholder="Buchtitel" required>
+        SCHRIFT
+        <div class="input-group">
+            <select class="form-control" name="bookTitleFontFamily" ng-model="book.title.font.family" required>
+                <option>SERIFEN LOS HELVETICA</option>
+                <option>SERIFEN TIMES</option>
+                <option>COMIC SANS</option>
+                <option>ANDERE HÄSSLICHE SCHRIFT</option>
+            </select>
+        </div>
+        SCHRIFTGRÖßE
+        <span class="range-label-left">9pt</span>
+        <input name="bookTitleFontSize" ng-model="book.title.font.size" type="range" min="9" max="16" value="16"/>
+        <span class="range-label-right">16pt</span>
+        <div class="btn-group" data-toggle="">
+            <label class="btn active" ng-model="book.title.font.bold" btn-checkbox>  
+                <strong>Fett</strong>
+            </label>
+            <label class="btn" ng-model="book.title.font.italic" btn-checkbox> 
+                <span style="font-style: oblique;">Italic</span>
+            </label>
+            <label class="btn" ng-model="book.title.font.capital" btn-checkbox>
+                KAPITAL
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="">
+            <label class="btn active" btn-radio="'left'" ng-model="book.title.font.align" >
+                LEFT
+            </label>
+            <label class="btn" btn-radio="'block'" ng-model="book.title.font.align">
+                BLOCK
+            </label> 
+            <label class="btn" btn-radio="'center'" ng-model="book.title.font.align">
+                CENTER
+            </label>
+            <label class="btn" btn-radio="'right'" ng-model="book.title.font.align">
+                RIGHT
+            </label>
+            
+            Aktuell: {{ book.title.font.align }}
+        </div>
+    </div>
+    <div class="part">
+        UNTERTITEL:
+        <input type="text" class="form-control" name="bookSubtitle" ng-model="book.subtitle.text" placeholder="Untertitel">
+        <div class="input-group">
+            <select class="form-control" name="titleFont" ng-model="book.subtitle.font.family">
+                <option>SERIFENLOS HELVETICA</option>
+                <option>SERIFEN TIMES</option>
+                <option>COMIC SANS</option>
+                <option>ANDERE HÄSSLICHE SCHRIFT</option>
+            </select>
+        </div>
+        SCHRIFTGRÖßE
+        <span class="range-label-left">9pt</span>
+        <input name="bookSubTitleFontSize" ng-model="book.subtitle.font.size" type="range" min="9" max="16" value="10"/>
+        <span class="range-label-right">16pt</span>
+        <div class="btn-group" data-toggle="">
+            <label class="btn active" ng-model="book.subtitle.font.bold" btn-checkbox>
+                <strong>Fett</strong>
+            </label>
+            <label class="btn" ng-model="book.subtitle.font.italic" btn-checkbox>
+                <span style="font-style: oblique;">Italic</span>
+            </label>
+            <label class="btn" ng-model="book.subtitle.font.capital" btn-checkbox>
+                KAPITAL
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="">
+            <label class="btn active" btn-radio="'left'" ng-model="book.subtitle.font.align" >
+                LEFT
+            </label>
+            <label class="btn" btn-radio="'block'" ng-model="book.subtitle.font.align">
+                BLOCK
+            </label>
+            <label class="btn" btn-radio="'center'" ng-model="book.subtitle.font.align">
+                CENTER
+            </label>
+            <label class="btn" btn-radio="'right'" ng-model="book.subtitle.font.align">
+                RIGHT
+            </label>
+
+            Aktuell: {{ book.title.font.align }}
+        </div>
+    </div>
+    <div class="part">
+        Purpose: {{ book.purpose }}<br />
+
+
+    </div>
+</div>

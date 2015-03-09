@@ -1,0 +1,46 @@
+<div class="book center-block vcenter">
+    <div class="pages">
+
+
+        <div class="page" ng-repeat="(pageNum, page) in book.getEvenPages()">
+            <div ng-if="pageNum == 0">
+                
+                <div class="page cover">
+                    <h3 class="font-family-{{ book.title.font.family }}"
+                        style="font-size:{{ book.title.font.size }}px;
+                                    font-weight: {{ book.title.font.bold ? 'bold' : 'normal' }};
+                                    font-style: {{ book.title.font.italic ? 'italic' : '' }};
+                                    text-align: {{ book.title.font.align }}">
+                        {{ book.title.text }}
+                    </h3>
+                    <h5 class="font-family-{{ book.subtitle.font.family }}"
+                        style="font-size:{{ book.subtitle.font.size }}px;
+                                    font-weight: {{ book.subtitle.font.bold ? 'bold' : 'normal' }};
+                                    font-style: {{ book.subtitle.font.italic ? 'italic' : '' }};
+                                    text-align: {{ book.subtitle.font.align }}">
+                        {{ book.subtitle.text }}
+                    </h5>
+                    
+                </div>
+            </div>
+            <div ng-if="pageNum > 0">
+                <p>
+                    Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla
+                    blabl Lorem impsum dolor amet bla blabl
+                    Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla
+                    blabl
+                </p>
+                <div class="page-number">{{ pageNum }}</div>
+            </div>
+            
+        </div>
+        <div class="page" ng-repeat="(pageNum, page) in book.getOddPages()">
+            <p>
+                Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl
+                Lorem impsum dolor amet bla blabl
+                Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl Lorem impsum dolor amet bla blabl
+            </p>
+            <div class="page-number">{{ pageNum }}</div>
+        </div>
+    </div>
+</div>
